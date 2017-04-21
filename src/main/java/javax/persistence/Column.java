@@ -137,4 +137,19 @@ public @interface Column {
      * (Applies only if a decimal column is used.)
      */
     int scale() default 0;
+    
+    /** (Optional) The comment of the column.
+     * <p> Defaults to the default comment.
+     */
+    String comment() default "";
+    
+    /** (Optional) The type of the column.
+     * <p> Defaults to the default type.
+     */
+    String type();
+    
+    /**
+     * (Optional) Whether the column is the primary key.
+     */
+    boolean isPK() default false;
 }

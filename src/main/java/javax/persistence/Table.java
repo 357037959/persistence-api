@@ -88,4 +88,9 @@ public @interface Table {
      * <p> Defaults to no additional constraints.
      */
     UniqueConstraint[] uniqueConstraints() default {};
+    
+    /** (Optional) The comment of the table.
+     * <p> Defaults to the default comment.
+     */
+    String comment() default "";
 }
