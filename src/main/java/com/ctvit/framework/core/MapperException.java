@@ -4,7 +4,10 @@ package com.ctvit.framework.core;
  * @author liuzh
  */
 public class MapperException extends RuntimeException {
-    public MapperException() {
+
+	private static final long serialVersionUID = 4200571589142600931L;
+
+	public MapperException() {
         super();
     }
 
