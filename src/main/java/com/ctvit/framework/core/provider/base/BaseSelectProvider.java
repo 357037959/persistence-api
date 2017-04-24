@@ -25,9 +25,10 @@
 package com.ctvit.framework.core.provider.base;
 
 import org.apache.ibatis.mapping.MappedStatement;
-import com.ctvit.framework.core.mapperhelper.MapperHelper;
-import com.ctvit.framework.core.mapperhelper.MapperTemplate;
-import com.ctvit.framework.core.mapperhelper.SqlHelper;
+
+import com.ctvit.framework.core.helper.MapperHelper;
+import com.ctvit.framework.core.helper.MapperTemplate;
+import com.ctvit.framework.core.helper.SqlHelper;
 
 /**
  * BaseSelectProvider实现类，基础方法实现类

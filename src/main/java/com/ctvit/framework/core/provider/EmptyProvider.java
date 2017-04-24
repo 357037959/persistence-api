@@ -24,8 +24,8 @@
 
 package com.ctvit.framework.core.provider;
 
-import com.ctvit.framework.core.mapperhelper.MapperHelper;
-import com.ctvit.framework.core.mapperhelper.MapperTemplate;
+import com.ctvit.framework.core.helper.MapperHelper;
+import com.ctvit.framework.core.helper.MapperTemplate;
 
 /**
  * 空方法Mapper接口默认MapperTemplate

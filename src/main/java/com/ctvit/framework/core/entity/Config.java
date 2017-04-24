@@ -9,28 +9,21 @@ import com.ctvit.framework.core.util.SimpleTypeUtil;
 import com.ctvit.framework.core.util.StringUtil;
 
 public class Config {
-    private String  UUID;
-    private String  IDENTITY;
+    private String UUID;
+    private String IDENTITY;
     private boolean BEFORE;
-    private String  seqFormat;
-    private String  catalog;
-    private String  schema;
-    //校验调用Example方法时，Example(entityClass)和Mapper<EntityClass>是否一致
+    private String seqFormat;
+    private String catalog;
+    private String schema;
+    /** 校验调用Example方法时，Example(entityClass)和Mapper<EntityClass>是否一致 */
     private boolean checkExampleEntityClass;
-    //使用简单类型
+    /** 使用简单类型 */
     private boolean useSimpleType;
-    /**
-     * 是否支持方法上的注解，默认false
-     */
+    /** 是否支持方法上的注解，默认false */
     private boolean enableMethodAnnotation;
-    /**
-     * 对于一般的getAllIfColumnNode，是否判断!=''，默认不判断
-     */
+    /** 对于一般的getAllIfColumnNode，是否判断!=''，默认不判断 */
     private boolean notEmpty = false;
-
-    /**
-     * 字段转换风格，默认驼峰转下划线
-     */
+    /** 字段转换风格，默认驼峰转下划线 */
     private Style style;
 
     /**

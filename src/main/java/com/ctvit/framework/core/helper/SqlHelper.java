@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapperhelper;
+package com.ctvit.framework.core.helper;
 
 import com.ctvit.framework.core.entity.EntityColumn;
 import com.ctvit.framework.core.entity.IDynamicTableName;

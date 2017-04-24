@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapperhelper;
+package com.ctvit.framework.core.helper;
 
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;

@@ -1,8 +1,5 @@
 package com.ctvit.framework.core.code;
 
-/**
- * 字段转换方式
- */
 public enum Style {
     normal,                     //原值
     camelhump,                  //驼峰转下划线

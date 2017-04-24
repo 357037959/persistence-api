@@ -24,7 +24,7 @@
 
 package com.ctvit.framework.core.spring.mapper;
 
-import com.ctvit.framework.core.mapperhelper.MapperHelper;
+import com.ctvit.framework.core.helper.MapperHelper;
 
 
 /**

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ctvit.framework.core.mapperhelper;
+package com.ctvit.framework.core.helper;
 
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.ExecutorException;

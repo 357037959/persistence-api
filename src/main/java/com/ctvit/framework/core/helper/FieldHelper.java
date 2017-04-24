@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapperhelper;
+package com.ctvit.framework.core.helper;
 
 import com.ctvit.framework.core.MapperException;
 import com.ctvit.framework.core.entity.EntityField;

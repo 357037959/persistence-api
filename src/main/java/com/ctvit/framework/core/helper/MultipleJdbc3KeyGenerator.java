@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapperhelper;
+package com.ctvit.framework.core.helper;
 
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.executor.ExecutorException;

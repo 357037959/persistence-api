@@ -1,7 +1,7 @@
 package com.ctvit.framework.core.spring.mapper;
 
+import com.ctvit.framework.core.helper.MapperHelper;
 import com.ctvit.framework.core.mapper.Marker;
-import com.ctvit.framework.core.mapperhelper.MapperHelper;
 import com.ctvit.framework.core.util.StringUtil;
 
 import java.util.Properties;
@@ -10,9 +10,9 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
-
 public class MapperScannerConfigurer extends org.mybatis.spring.mapper.MapperScannerConfigurer {
-    private MapperHelper mapperHelper = new MapperHelper();
+    
+	private MapperHelper mapperHelper = new MapperHelper();
 
     public void setMarkerInterface(Class<?> superClass) {
         super.setMarkerInterface(superClass);
@@ -29,20 +29,10 @@ public class MapperScannerConfigurer extends org.mybatis.spring.mapper.MapperSca
         this.mapperHelper = mapperHelper;
     }
 
-    /**
-     * 属性注入
-     *
-     * @param properties
-     */
     public void setProperties(Properties properties) {
         mapperHelper.setProperties(properties);
     }
 
-    /**
-     * 注册完成后，对MapperFactoryBean的类进行特殊处理
-     *
-     * @param registry
-     */
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) {
         super.postProcessBeanDefinitionRegistry(registry);

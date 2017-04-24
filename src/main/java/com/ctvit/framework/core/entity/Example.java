@@ -29,7 +29,7 @@ import org.apache.ibatis.reflection.SystemMetaObject;
 import org.apache.ibatis.type.TypeHandler;
 
 import com.ctvit.framework.core.MapperException;
-import com.ctvit.framework.core.mapperhelper.EntityHelper;
+import com.ctvit.framework.core.helper.EntityHelper;
 import com.ctvit.framework.core.util.StringUtil;
 
 import java.util.*;

@@ -25,12 +25,13 @@
 package com.ctvit.framework.core.provider.base;
 
 import org.apache.ibatis.mapping.MappedStatement;
+
 import com.ctvit.framework.core.MapperException;
 import com.ctvit.framework.core.entity.EntityColumn;
-import com.ctvit.framework.core.mapperhelper.EntityHelper;
-import com.ctvit.framework.core.mapperhelper.MapperHelper;
-import com.ctvit.framework.core.mapperhelper.MapperTemplate;
-import com.ctvit.framework.core.mapperhelper.SqlHelper;
+import com.ctvit.framework.core.helper.EntityHelper;
+import com.ctvit.framework.core.helper.MapperHelper;
+import com.ctvit.framework.core.helper.MapperTemplate;
+import com.ctvit.framework.core.helper.SqlHelper;
 import com.ctvit.framework.core.util.StringUtil;
 
 import java.util.Set;
