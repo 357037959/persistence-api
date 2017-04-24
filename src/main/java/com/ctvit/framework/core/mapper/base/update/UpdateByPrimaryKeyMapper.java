@@ -22,27 +22,30 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
+package com.ctvit.framework.core.mapper.base.update;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.UpdateProvider;
+
+import com.ctvit.framework.core.provider.base.BaseUpdateProvider;
+
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
- * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
- * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
+ * 通用Mapper接口,更新
  *
  * @param <T> 不能为空
  * @author liuzh
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface UpdateByPrimaryKeyMapper<T> {
+
+    /**
+     * 根据主键更新实体全部字段，null值会被更新
+     *
+     * @param record
+     * @return
+     */
+    @UpdateProvider(type = BaseUpdateProvider.class, method = "dynamicSQL")
+    @Options(useCache = false, useGeneratedKeys = false)
+    int updateByPrimaryKey(T record);
 
 }

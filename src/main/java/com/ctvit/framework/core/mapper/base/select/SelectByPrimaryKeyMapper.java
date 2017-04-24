@@ -22,12 +22,11 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
+package com.ctvit.framework.core.mapper.base.select;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import org.apache.ibatis.annotations.SelectProvider;
+
+import com.ctvit.framework.core.provider.base.BaseSelectProvider;
 
 /**
  * 通用Mapper接口,其他接口继承该接口即可
@@ -39,10 +38,15 @@ import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
  * @param <T> 不能为空
  * @author liuzh
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface SelectByPrimaryKeyMapper<T> {
+
+    /**
+     * 根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号
+     *
+     * @param key
+     * @return
+     */
+    @SelectProvider(type = BaseSelectProvider.class, method = "dynamicSQL")
+    T selectByPrimaryKey(Object key);
 
 }

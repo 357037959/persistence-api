@@ -22,27 +22,24 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
+package com.ctvit.framework.core.provider;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import com.ctvit.framework.core.mapperhelper.MapperHelper;
+import com.ctvit.framework.core.mapperhelper.MapperTemplate;
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
+ * 空方法Mapper接口默认MapperTemplate
  * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
- * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
- *
- * @param <T> 不能为空
- * @author liuzh
+ * 如BaseSelectMapper，接口纯继承，不包含任何方法
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public class EmptyProvider extends MapperTemplate {
 
+    public EmptyProvider(Class<?> mapperClass, MapperHelper mapperHelper) {
+        super(mapperClass, mapperHelper);
+    }
+
+    @Override
+    public boolean supportMethod(String msId) {
+        return false;
+    }
 }

@@ -22,27 +22,20 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
-
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+package com.ctvit.framework.core.entity;
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
- * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
- * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
+ * 实现动态表名时，实体类需要实现该接口
  *
- * @param <T> 不能为空
  * @author liuzh
+ * @since 2015-10-28 22:20
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface IDynamicTableName {
 
+    /**
+     * 获取动态表名 - 只要有返回值，不是null和''，就会用返回值作为表名
+     *
+     * @return
+     */
+    String getDynamicTableName();
 }

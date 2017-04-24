@@ -24,25 +24,21 @@
 
 package com.ctvit.framework.core.mapper;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import com.ctvit.framework.core.mapper.rowbounds.SelectByExampleRowBoundsMapper;
+import com.ctvit.framework.core.mapper.rowbounds.SelectRowBoundsMapper;
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
+ * 通用Mapper接口,带RowBounds参数的查询
  * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
+ * 配合分页插件PageHelper可以实现物理分页
  * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
+ * PageHelper - http://git.oschina.net/free/Mybatis_PageHelper
  *
  * @param <T> 不能为空
  * @author liuzh
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface RowBoundsMapper<T> extends
+        SelectByExampleRowBoundsMapper<T>,
+        SelectRowBoundsMapper<T> {
 
 }

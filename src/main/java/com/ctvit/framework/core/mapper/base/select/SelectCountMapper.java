@@ -22,27 +22,27 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
+package com.ctvit.framework.core.mapper.base.select;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import org.apache.ibatis.annotations.SelectProvider;
+
+import com.ctvit.framework.core.provider.base.BaseSelectProvider;
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
- * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
- * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
+ * 通用Mapper接口,查询
  *
  * @param <T> 不能为空
  * @author liuzh
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface SelectCountMapper<T> {
+
+    /**
+     * 根据实体中的属性查询总数，查询条件使用等号
+     *
+     * @param record
+     * @return
+     */
+    @SelectProvider(type = BaseSelectProvider.class, method = "dynamicSQL")
+    int selectCount(T record);
 
 }

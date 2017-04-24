@@ -22,27 +22,22 @@
  * THE SOFTWARE.
  */
 
-package com.ctvit.framework.core.mapper;
+package com.ctvit.framework.core.mapper.sqlserver;
 
-import com.ctvit.framework.core.mapper.base.BaseDeleteMapper;
-import com.ctvit.framework.core.mapper.base.BaseInsertMapper;
-import com.ctvit.framework.core.mapper.base.BaseSelectMapper;
-import com.ctvit.framework.core.mapper.base.BaseUpdateMapper;
+import org.apache.ibatis.annotations.InsertProvider;
+import org.apache.ibatis.annotations.Options;
+import com.ctvit.framework.core.provider.SqlServerProvider;
 
 /**
- * 通用Mapper接口,其他接口继承该接口即可
- * <p/>
- * <p>这是一个例子，自己扩展时可以参考</p>
- * <p/>
- * <p>项目地址 : <a href="https://github.com/abel533/Mapper" target="_blank">https://github.com/abel533/Mapper</a></p>
+ * 通用Mapper接口,插入
  *
  * @param <T> 不能为空
  * @author liuzh
  */
-public interface BaseMapper<T> extends
-        BaseSelectMapper<T>,
-        BaseInsertMapper<T>,
-        BaseUpdateMapper<T>,
-        BaseDeleteMapper<T> {
+public interface InsertSelectiveMapper<T> {
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @InsertProvider(type = SqlServerProvider.class, method = "dynamicSQL")
+    int insertSelective(T record);
 
 }
