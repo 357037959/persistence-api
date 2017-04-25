@@ -152,4 +152,9 @@ public @interface Column {
      * (Optional) Whether the column is the primary key.
      */
     boolean isPK() default false;
+    
+    /** (Optional) The field of the column.
+     * <p> Defaults to the default field.
+     */
+    String field() default "";
 }
