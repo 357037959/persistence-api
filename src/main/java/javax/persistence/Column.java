@@ -37,6 +37,9 @@ package javax.persistence;
 
 import java.lang.annotation.Target;
 import java.lang.annotation.Retention;
+
+import com.baomidou.mybatisplus.enums.FieldStrategy;
+
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
@@ -146,7 +149,7 @@ public @interface Column {
     /** (Optional) The type of the column.
      * <p> Defaults to the default type.
      */
-    String type();
+    String type() default "";
     
     /**
      * (Optional) Whether the column is the primary key.
@@ -157,4 +160,35 @@ public @interface Column {
      * <p> Defaults to the default field.
      */
     String field() default "";
+    
+    /**
+     * <p>
+     * 当该Field为类对象时, 可使用#{对象.属性}来映射到数据表.
+     * </p>
+     * <p>
+     * 支持：@Column(el = "role, jdbcType=BIGINT)<br>
+     * 支持：@Column(el = "role, typeHandler=com.baomidou.xx.typehandler.PhoneTypeHandler")
+     * </p>
+     */
+    String el() default "";
+    
+    /**
+     * <p>
+     * 是否为数据库表字段
+     * </p>
+     * <p>
+     * 默认 true 存在，false 不存在
+     * </p>
+     */
+    boolean exist() default true;
+
+    /**
+     * <p>
+     * 字段验证
+     * </p>
+     * <p>
+     * 默认 非 null 判断
+     * </p>
+     */
+    FieldStrategy validate() default FieldStrategy.NOT_NULL;
 }

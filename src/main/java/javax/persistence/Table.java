@@ -93,4 +93,11 @@ public @interface Table {
      * <p> Defaults to the default comment.
      */
     String comment() default "";
+    
+    /*
+     * <p>
+     * 实体映射结果集
+     * </p>
+     */
+    String resultMap() default "";
 }
